@@ -9,7 +9,6 @@ var plumberNotifier = require('gulp-plumber-notifier');
 var cached = require('gulp-cached');
 var sassPartialsImported = require('gulp-sass-partials-imported');
 var pugInheritance = require('gulp-pug-inheritance');
-
 gulp.task('webserver', function() {
   gulp.src('./dist')
     .pipe(server({
@@ -18,9 +17,8 @@ gulp.task('webserver', function() {
       open: false
     }));
 });
-
 gulp.task('imgCopy',async function(){
-  gulp.src('./app/img/*')
+  gulp.src('./app/img/**/*')
     .pipe(cached('images'))
     .pipe( gulp.dest('./dist/img/') )
 })
@@ -57,7 +55,7 @@ gulp.task('cssBuild', async function(){
 })
 
 gulp.task('watcher', function(){  
-  gulp.watch('./app/img/*', gulp.series('imgCopy'))
+  gulp.watch('./app/img/**/*', gulp.series('imgCopy'))
   gulp.watch('./app/sass/*.sass', gulp.series('cssBuild'))
   gulp.watch('./app/js/*.js', gulp.series('jsBuild'))
   gulp.watch(['./app/*.pug','./app/partials/*.pug'], gulp.series('htmlBuild'))
