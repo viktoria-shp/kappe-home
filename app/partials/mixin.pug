@@ -1,0 +1,9 @@
+mixin title(title)
+  .title
+    span #{title} 
+mixin menu(menu)
+  .menu
+    ul
+      each item, index in menu
+        li(class=item.active!=undefined && item.active==1?'active':'')
+          a(href=item.href) #{item.text}   

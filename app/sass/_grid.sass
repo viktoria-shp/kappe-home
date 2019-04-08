@@ -1,0 +1,54 @@
+@import "_vars"
+.column
+  @each $point in $points
+    &-#{$point}
+      @each $column in $columns
+        &-#{$column}
+          padding: 0 $gutter/2
+          width: 100%
+.column
+  @each $point in $points
+    +breakpoint($point)
+      &-#{$point}
+        @each $column in $columns
+          &-#{$column}
+            $percents: percentage(number(str-slice($column,1,1)) / number(str-slice($column,3,3)))
+            max-width: $percents
+.test-clas__function
+  margin: (number($test))
+.wrapper
+  margin: 0 auto
+.row
+  display: flex
+  flex-wrap: wrap
+[class*="column"]
+  width: 100%
+.justify-between
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  width: 100%
+  position: relative
+.main-page
+  //display: flex
+  min-heigh: 100%
+.sidebar
+  //flex: 0 0 300px
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 300px
+  overflow-y: auto
+  box-shadow: 1px 0 35px 30px #616161
+  display: block
+  z-index: 2
+.noshadow
+  box-shadow: none
+  &__iner
+.content
+  margin:
+    left: 300px
+  height: 100vh
+
+
+     

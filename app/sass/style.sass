@@ -1,0 +1,417 @@
+@import "_vars";
+@import "_mixin";
+@import "_grid";
+body 
+  margin: 0
+img
+  max-width: 100%
+.my-scrollbar
+  height: 100%
+::-webkit-scrollbar 
+  width: 20px
+  height: 5px
+::-webkit-scrollbar-track 
+  box-shadow: inset 0 0 5px grey 
+  border-radius: 10px
+::-webkit-scrollbar-thumb 
+  background: #d7d7d7
+  border-radius: 10px
+::-webkit-scrollbar-thumb:hover 
+  background: #2db8b7
+.portfolio-list
+  display: flex
+  flex-wrap: wrap
+.portfolio-item
+  display: block
+  width: 100%
+  padding-top: 75%
+  position: relative
+  overflow: hidden
+  &__wrap
+    flex: 0 1 100%
+    overflow: hidden
+    trasform: scale(1)
+    transition: .3s ease transform
+    &.is-hidden
+      width: 0
+      flex: 0
+      trasform: scale(0)
+    +breakpoint(phablet)
+      flex: 0 1 50%
+    +breakpoint(tablet)
+      flex: 0 1 50%
+    +breakpoint(laptop)
+      flex: 0 1 33.33%
+    +breakpoint(desktop)
+      flex: 0 1 25%
+  &__inner
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    picture
+      display: block
+      height: 100%
+      width: 100%
+    img
+      object-fit: cover
+      width: 100%
+.logo
+  padding: 35px 85px
+  &__title
+    color: #364048
+    +propToRem(font-size, 48)
+  &__subtitle
+    img
+      padding-left: 35px
+    .rotate
+.menu
+  ul
+    margin: 0
+    padding: 0
+    li
+      list-style: none
+      display: flex
+      justify-content: flex-end
+      padding: 25px
+      background-image: linear-gradient(to bottom, #333b3f, #323a3e, #31393d, #30383c, #2f373b)
+      border-bottom: 1px solid #293034
+      &.active
+        background-image: linear-gradient(to bottom, #31bcbb, #2cb6b5, #26b0ae, #20aaa8, #19a4a2)
+        border-bottom: 1px solid #169291
+      a
+        +propToRem(font-size, 18)
+        text-decoration: none
+        color: #fff
+.portfolio-item:hover
+  .info
+    background-color: #2db8b7
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    opacity: 0.9
+    color: #fff
+    &-center
+      text-align: center
+      top: 50%
+      position: absolute
+      left: 50%
+      transform: translate(-50%, -50%)
+    &__title
+      +propToRem(font-size, 14)
+      text-transform: capitalize
+      +breakpoint(phablet)
+        +propToRem(font-size, 16)
+      +breakpoint(laptop)
+        +propToRem(font-size, 17)
+      +breakpoint(desktop)
+        +propToRem(font-size, 18)
+    &__subtitle
+      +propToRem(font-size, 7)
+      padding: 5px 0 15px 0
+      border-bottom: 1px solid #fff
+      margin-bottom: 10px
+      +breakpoint(phablet)
+        +propToRem(font-size, 10)
+      +breakpoint(laptop)
+        +propToRem(font-size, 10)
+        margin-bottom: 10px
+      +breakpoint(desktop)
+        +propToRem(font-size, 12)
+        margin-bottom: 15px
+    a
+      color: #fff
+    &__arrow
+      padding: 8px 12px
+      border: 1px solid #fff
+      border-radius: 50%
+      width: 13px
+      margin: 0 auto
+      +breakpoint(phablet)
+        width: 11px
+        padding: 11px 16px
+      +breakpoint(laptop)
+        width: 13px
+        padding: 13px 17px
+      +breakpoint(desktop)
+        width: 20px
+        padding: 20px
+      a
+        color: #fff
+.contact
+  display: block
+  position: absolute
+  right: 0
+  top: 0
+  color: #fff
+  a
+    color: #fff
+    text-decoration: none
+  &__icon
+    position: absolute
+    display: block
+    right: 0
+    padding: 15px
+    background-color: #28b4b2
+    z-index: 5
+    i
+      padding: 14px 12px 13px 16px
+      border: 1px solid #fff
+      border-radius: 50%
+      width: 20px
+  &-info
+    display: none
+  .active
+    display: block
+    position: relative
+    background-color: #333333
+    padding: 20px
+    opacity: 0.8
+    top: 75px
+    i
+      padding: 0 10px 20px 0
+.map
+  iframe
+    height: 1050px
+.contact-us
+  display: block
+  position: absolute
+  top: 0
+  width: 785px
+  height: 465px
+  background: #fff
+  padding: 30px
+  margin: 25px
+  &__title
+    color: #000
+    +propToRem(font-size, 24)
+    padding-bottom: 20px
+  &__text
+    color: #a3a3a3
+    +propToRem(font-size, 18)
+    padding-bottom: 35px
+    border-bottom: 1px solid #a3a3a3
+  &__form
+    color: #000
+    +propToRem(font-size, 24)
+    padding: 25px 0
+    form
+      margin-top: 25px
+      .row
+        display: flex
+        .column
+          flex: 50%
+          display: flex
+          flex-direction: column
+          &-row
+            border: 1px solid #EAEAEA
+            display: flex
+            flex-direction: row
+            width: 100%
+            margin-bottom: 10px
+            .icon
+              display: flex
+              width: 60px
+              justify-content: center
+              align-items: center
+              border-right: 1px solid #EAEAEA
+              .fa, .fas, .far
+                font-weight: 900
+                font-size: 14px
+                padding: 8px 10px
+                border: 1px solid #1ab5b3
+                border-radius: 50%
+                width: 12px
+                color: #1ab5b3
+            input
+              border: 0px solid #eaeaea
+              height: 60px
+              padding: 0 20px 
+              width: 100%
+          textarea
+            margin-left: 10px
+            border: 1px solid #eaeaea
+            padding: 25px 20px
+            box-sizing: border-box
+            height: 134px
+          .button-send
+            margin-left: 10px
+            height: 62px
+            background-color: #1ab5b3
+            margin-top: 10px
+            padding: 25px 0
+            text-align: center
+            border: 1px solid #1ab5b3
+            +propToRem(font-size, 14)
+            color: #fff
+            text-transform: uppercase
+.content
+  .row
+    display: flex
+    .column
+      flex: 50%
+      display: flex
+      flex-direction: column
+      .about-us
+        padding: 30px
+        border-right: 1px solid #e5e5e5
+        &__img
+          margin-bottom: 25px
+        &__text
+          border-bottom: 1px solid #e5e5e5
+          margin-bottom: 30px
+          .title
+            margin-bottom: 20px
+          p
+            +propToRem(font-size, 18)
+            color: #a3a3a3
+            margin: 0 0 30px 0
+      .skill
+        padding: 30px 
+        .skills
+          &-row
+            margin-top: 25px
+            &__info
+              display: flex
+              justify-content: space-between
+              font-size: 15px
+              color: #727272
+            &__persentage
+              height: 35px
+              border: 1px solid #e2e2e2
+              margin: 15px 0 20px 0
+              .persentage_width
+                background-color: #e2e2e2
+                height: 100%
+              
+              @for $i from 1 through 100
+                .width_#{$i}
+                  width: 0% + $i 
+
+        .description
+          border: 1px solid #d7d7d7
+          border-top: 0
+          margin: 25px 0 30px
+          &__img
+            background-color: #1ab5b3
+            position: relative
+            font-size: 0
+            span
+              position: absolute
+              padding: 32px 20px
+              +propToRem(font-size, 15)
+              color: #fff
+          &__text
+            +propToRem(font-size, 18)
+            color: #a3a3a3
+            padding: 30px
+        .services
+          ul
+            padding: 20px
+            margin: 0
+            li
+              color: #848484
+              +propToRem(font-size, 14)
+              line-height: 2s
+.title
+  +propToRem(font-size, 24)
+  font-family: 'Roboto Thin', sans-serif
+  color: #a9a9a9
+.staff-list
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  padding-top: 25px
+  margin: -10px
+  .staff-item
+    flex: 0 1 29%
+    margin: 10px
+    display: block
+    position: relative    
+.share
+  display: flex
+  justify-content: space-between
+  padding: 30px 25px 0 50px
+  background-color: #242b2e
+.copyrights
+  color: #6b7072
+  +propToRem(font-size, 12)
+  background-color: #242b2e
+  padding: 25px 25px 25px 0
+  text-align: right
+.filter
+  background-color: #242b2e
+  color: #1ab5b3
+  +propToRem(font-size, 19)
+  padding: 25px 25px 30px 0
+  border-top: 1px solid #202426
+  border-bottom: 1px solid #202426
+  &__title
+    display: flex
+    justify-content: flex-end
+    padding-bottom: 7px
+    a
+      text-decoration: none
+      color: #1ab5b3
+      span
+        padding-right: 10px
+  &__item
+    display: flex
+    flex-direction: column
+    text-align: end
+    li
+      text-decoration: none
+      list-style: none
+      a
+        color: #6b7072
+        +propToRem(font-size, 13)
+        padding: 7px 0
+        text-decoration: none
+      &.is-active a
+        color: #fff
+.scroll-up
+  position: fixed
+  bottom: 30px
+  right: 20px
+  font-size: 2.5em
+  color: #31bcbb
+  cursor: pointer
+.hide
+  display: none
+        
+.sprite 
+  background-image: url(../img/spritesheet.png)
+  background-repeat: no-repeat
+  display: block
+.sprite-webicon-behance
+  width: 24px
+  height: 24px
+  background-position: -5px -5px
+.sprite-webicon-dribbble
+  width: 24px
+  height: 24px
+  background-position: -39px -5px
+.sprite-webicon-facebook
+  width: 24px
+  height: 24px
+  background-position: -5px -39px
+.sprite-webicon-flickr
+  width: 24px
+  height: 24px
+  background-position: -39px -39px  
+.sprite-webicon-googleplus 
+  width: 24px
+  height: 24px
+  background-position: -73px -5px
+.sprite-webicon-pinterest 
+  width: 24px
+  height: 24px
+  background-position: -73px -39px
+.sprite-webicon-twitter 
+  width: 24px
+  height: 24px
+  background-position: -5px -73p

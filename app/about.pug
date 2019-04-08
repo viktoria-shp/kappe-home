@@ -1,0 +1,90 @@
+doctype html
+html(lang='uk')
+  include partials/head
+body
+  .main-page
+    .sidebar.noshadow
+      .my-scrollbar
+        include partials/logo
+        -
+          var menu = [
+            {text:'Home', href:'index.html'},
+            {text:'Work', href:'work.html'},
+            {text:'About', href:'about.html', active: 1},
+            {text:'Blog', href:'blog.html'},
+            {text:'Services', href:'services.html'},
+            {text:'Contact', href:'contact.html'}
+          ];
+        +menu(menu)
+        include partials/filter
+        include partials/share
+    .content
+      .my-scrollbar
+        .row
+          .column
+            .about-us
+              .about-us__img
+                img(src="img/about-main.png") 
+              .about-us__text
+                +title('Who We Are')
+                p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. 
+
+                p span Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+              .about-us__staff
+                +title('Our Staff')
+                .staff-list
+                  - for(var i=0; i<6; i++)
+                    .staff-item
+                      .staff-item__img
+                        picture
+                          img(src="img/about-stuff.png" alt="")
+                          .info
+                            .info-center
+                              .info__title
+                                span John Smith
+                              .info__subtitle
+                                span web development                                
+          .column
+            .skill
+              .skills
+                +title('Our Skills')
+                -
+                  var items = [
+                    {title:'Website Design', persentage: 89},
+                    {title:'Website Development', persentage: 97},
+                    {title:'Plugins', persentage: 85},
+                    {title:'Front-end', persentage: 79}                   
+                  ];
+                each item in items
+                  .skills-row
+                    .skills-row__info
+                      .info-title
+                        span #{item.title}
+                      .info-text
+                        span #{item.persentage}%
+                    .skills-row__persentage
+                      div(class='persentage_width width_' + item.persentage)
+              .testimonials
+                +title('Testimonials')
+                .description
+                  .description__img
+                    img(src='img/testimonials.png')
+                    span Collis Ta’eed - CEO at Envato
+                  .description__text
+                    span Sollicitudin lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.
+              +title('Services')
+              .services
+                ul
+                  -
+                    var items = [
+                      'Web Design',
+                      'Photography',
+                      'Plugin Development',
+                      'Front-end',
+                      'Design from Scratch',
+                      'Website Maintenance'                    
+                    ];
+                  each item in items
+                    li #{item}                
+include partials/footer
+

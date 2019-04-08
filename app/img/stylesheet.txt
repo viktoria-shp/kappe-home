@@ -1,0 +1,47 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-webicon-behance {
+    width: 48px;
+    height: 48px;
+    background-position: -5px -5px;
+}
+
+.sprite-webicon-dribbble {
+    width: 48px;
+    height: 48px;
+    background-position: -63px -5px;
+}
+
+.sprite-webicon-facebook {
+    width: 48px;
+    height: 48px;
+    background-position: -5px -63px;
+}
+
+.sprite-webicon-flickr {
+    width: 48px;
+    height: 48px;
+    background-position: -63px -63px;
+}
+
+.sprite-webicon-googleplus {
+    width: 48px;
+    height: 48px;
+    background-position: -121px -5px;
+}
+
+.sprite-webicon-pinterest {
+    width: 48px;
+    height: 48px;
+    background-position: -121px -63px;
+}
+
+.sprite-webicon-twitter {
+    width: 48px;
+    height: 48px;
+    background-position: -5px -121px;
+}

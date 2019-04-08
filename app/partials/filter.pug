@@ -1,0 +1,19 @@
+.filter
+  .filter__title
+    a(href="")
+      span Filter
+      i(class="fas fa-th-large")
+  .filter__item
+    -
+      var items = [
+        'all Works',
+        'web design',
+        'illustration ',
+        'photography',
+        'wallpapers',
+        'brochures'
+      ];
+    ul
+      each item in items
+        li(class=index==0?'active':'')
+          a(href="#"+item.replace(' ', '').toLowerCase())=item
