@@ -1,0 +1,170 @@
+* 
+  box-sizing: border-box
+.grid 
+  background-color: #b4b7b8
+  padding-bottom: 70px
+.grid:after 
+  content: ''
+  display: block
+  clear: both
+.grid-sizer,
+.grid-item 
+  float: left
+  min-width: 294px
+  margin: 20px
+  +breakpoint(phablet)  
+    width: calc(100% - 40px)
+  +breakpoint(tablet)  
+    width: calc(100%/2 - 40px)
+  +breakpoint(laptop)  
+    width: calc(100%/3 - 40px)
+  +breakpoint(desktop)
+    width: calc(100%/5 - 40px)
+.grid-item 
+  background-color: #fff
+  img 
+    display: block
+    width: 100%
+.mySlides 
+  display:none
+img
+  width: 100%
+.blog-icons
+  color: #818181
+  +propToRem(font-size, 13)
+  display: flex
+  padding: 15px
+  &__comment
+    padding-right: 30px
+    i.fa-comment:before
+      padding-right: 10px
+  &__calendar
+    i.fa-calendar-alt:before
+      padding-right: 10px  
+.video
+  &__img
+    iframe
+      width: 100%
+  &__title
+    +propToRem(font-size, 18)
+    color: #000
+    padding: 20px
+  &__text
+    +propToRem(font-size, 13)
+    color: #9c9c9c
+    padding: 0 20px 20px
+    border-bottom: 1px solid #d7d7d7
+.standard
+  &__title
+    +propToRem(font-size, 18)
+    color: #000
+    padding: 20px
+  &__text
+    +propToRem(font-size, 13)
+    color: #9c9c9c
+    padding: 0 20px 20px
+    border-bottom: 1px solid #d7d7d7
+.standard1
+  &__title
+    +propToRem(font-size, 18)
+    color: #000
+    padding: 20px
+  &__text
+    +propToRem(font-size, 13)
+    color: #9c9c9c
+    padding: 0 20px 20px
+    border-bottom: 1px solid #d7d7d7
+.gallery
+  height: auto
+  img
+    display: none
+    width: 100%
+  .w3-button
+    +propToRem(font-size, 35)
+  .w3-black, .w3-hover-black:hover 
+    color: #fff!important
+    background-color: #1ab5b3!important
+  .w3-button:hover 
+    color: #000!important
+    background-color: #1ab5b3!important
+    +propToRem(font-size, 35)
+
+  &__title
+    +propToRem(font-size, 18)
+    color: #000
+    padding: 20px
+  &__text
+    +propToRem(font-size, 13)
+    color: #9c9c9c
+    padding: 0 20px 20px
+    border-bottom: 1px solid #d7d7d7
+.link
+  background-color: #1ab5b3
+  text-align: center
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  &__title
+    +propToRem(font-size, 18)
+    color: #fff
+    padding: 20px
+  &__hreff
+    +propToRem(font-size, 14)
+    padding-bottom: 35px
+    a
+      color: #fff
+      font-weight: bold
+.aside
+  height: 140px
+  min-width: 279px 
+  background-color: #242b2e
+  overflow: scroll
+  border-left: 15px solid #1ab5b3
+  &__title
+    +propToRem(font-size, 21)
+    color: #fff
+    padding: 20px 20px 10px
+  &__text
+    +propToRem(font-size, 14)
+    color: #9c9c9c
+    padding: 0 20px
+.quote
+  font-style: italic
+  background-color: #242b2e
+  color: #fff
+  +propToRem(font-size, 21)
+  display: flex
+  justify-content: center
+  flex-direction: column
+  text-align: center
+  blockquote::after
+    content: "\201C"
+    color: #1ab5b3
+    height: 44px
+    line-height: 1.5
+    font-size: 3.25rem
+    display: block
+  &__autor
+    color: #1ab5b3
+    +propToRem(font-size, 18)
+    padding-bottom: 30px
+.clearfix
+  clear: both
+.older-container
+  width: 100%
+  position: absolute
+  bottom: 0
+  .older-post
+    width: 50%
+    text-transform: uppercase
+    +propToRem(font-size, 14)
+    background-color: #1ab5b3
+    color: #fff
+    margin: 0 auto
+    padding: 20px
+    text-align: center
+    +breakpoint(laptop)
+      width: 20%
+      +propToRem(font-size, 18)
+

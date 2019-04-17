@@ -1,0 +1,182 @@
+doctype html
+html(lang='uk')
+  include partials/head
+body
+  .main-page
+    .sidebar-opener
+      a(href="#")
+        i(class="fas fa-bars")
+    .sidebar.noshadow
+      .my-scrollbar
+        include partials/logo
+        -
+          var menu = [
+            {text:'Home', href:'index.html'},
+            {text:'Work', href:'singlework.html'},
+            {text:'About', href:'about.html'},
+            {text:'Blog', href:'blog.html', active: 1},
+            {text:'Services', href:'services.html'},
+            {text:'Contact', href:'contact.html'}
+          ];
+        +menu(menu)
+        include partials/filter
+        include partials/share
+    .content
+      .m-l-300
+        .my-scrollbar
+          include partials/contact-info   
+          .grid
+            .grid-sizer
+            .grid-item.gallery
+              .w3-content.w3-display-container
+                img(class="mySlides" src="img/blog/item-galery.png" style="display:block;")
+                img(class="mySlides" src="img/blog/gallery1.jpg" )
+                img(class="mySlides" src="img/blog/gallery2.jpg" )
+                img(class="mySlides" src="img/blog/gallery3.jpg" )
+                button(class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)")
+                  i(class="fas fa-chevron-left")
+                button(class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)")
+                  i(class="fas fa-chevron-right")
+              .gallery__title
+                span Gallery Post Example
+              .gallery__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.link
+              .link__title
+                span Another Post where you can put a link to a specific website 
+              .link__hreff
+                a(href="http://www.themeforest.net") http://www.themeforest.net 
+            .grid-item.img
+              img(src="img/blog/item-img.png")
+            .grid-item.quote
+              blockquote.quote__text Logic will get you from A to B. Imagination will take you every
+              .quote__autor Albert Einstein
+            .grid-item.img
+              img(src="img/blog/item-img.png")
+            .grid-item.video
+              .video__img
+                iframe(width="294" height="381" src="https://www.youtube.com/embed/YNY_pb4b22k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .video__title
+                span Self-hosted video post  
+              .video__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.standard
+              .standard__img
+                img(src="img/blog/item-standard141.png")   
+              .standard__title
+                span Standard post format
+              .standard__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.standard
+              .standard__img
+                img(src="img/blog/item-standard141.png")   
+              .standard__title
+                span Standard post format
+              .standard__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.link
+              .link__title
+                span Another Post where you can put a link to a specific website 
+              .link__hreff
+                a(href="http://www.themeforest.net") http://www.themeforest.net 
+            .grid-item.standard1
+              .standard__img
+                img(src="img/blog/item-standard316.png")   
+              .standard__title
+                span Standard post format
+              .standard__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.aside
+              .aside__title
+                span Aside Post Format
+              .aside__text
+                span This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+            .grid-item.gallery
+              .w3-content.w3-display-container
+                img(class="mySlides" src="img/blog/item-galery.png" style="display:block;")
+                img(class="mySlides" src="img/blog/gallery1.jpg" )
+                img(class="mySlides" src="img/blog/gallery2.jpg" )
+                img(class="mySlides" src="img/blog/gallery3.jpg" )
+                button(class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)")
+                  i(class="fas fa-chevron-left")
+                button(class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)")
+                  i(class="fas fa-chevron-right")
+              .gallery__title
+                span Gallery Post Example
+              .gallery__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.video
+              .video__img
+                iframe(width="294" height="381" src="https://www.youtube.com/embed/YNY_pb4b22k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+              .video__title
+                span Self-hosted video post  
+              .video__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013
+            .grid-item.standard
+              .standard__img
+                img(src="img/blog/item-standard141.png")   
+              .standard__title
+                span Standard post format
+              .standard__text
+                span A man who works with his hands is a laborer; a man who works with his hand s and his brain is a craftsman; but a man who works with his hands and his brain and his heart is an artist
+              .blog-icons
+                .blog-icons__comment
+                  i(class="fas fa-comment")
+                    | 3 comments
+                .blog-icons__calendar
+                  i(class="fas fa-calendar-alt")
+                    | Dec 19, 2013         
+          .clearfix
+          .older-container
+            div(class="older-post" data-page="1")
+              span Older Posts  
+include partials/footer

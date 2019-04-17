@@ -1,0 +1,172 @@
+doctype html
+html(lang='uk')
+  include partials/head
+body
+  .main-page
+    .sidebar-opener
+      a(href="#")
+        i(class="fas fa-bars")
+    .sidebar.noshadow
+      .my-scrollbar
+        include partials/logo
+        -
+          var menu = [
+            {text:'Home', href:'index.html'},
+            {text:'Work', href:'singlework.html'},
+            {text:'About', href:'about.html'},
+            {text:'Blog', href:'blog.html'},
+            {text:'Services', href:'services.html', active: 1},
+            {text:'Contact', href:'contact.html'}
+          ];
+        +menu(menu)
+        include partials/filter
+        include partials/share
+    .content
+      .my-scrollbar
+        .m-l-300
+          .row
+            .column
+              .m-r-30
+                include partials/slider
+                .text-info
+                  +title('Heavy Sand - Creative Photography')
+                  p Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                  p Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. 
+                .comments
+                  +title('5 Comments')
+                  ul
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+                    li
+                      .comment
+                        img(src="img/singlepost/img.png")
+                        .comment-info
+                          .comment-info__author
+                            span ShaneFreer
+                            span.text / 58 minutes ago
+                          .comment-info__text
+                            p great post brainartworks
+
+                    
+                .comments-form
+                  +title('Leave a Comment')
+                  .contact-us__form
+                    form(action="/action_page.php")
+                      .row
+                        .column
+                          .column-row
+                            .icon
+                              i(class="fas fa-user")
+                            input(type="text" id="name" name="name" placeholder="Name")
+                          .column-row
+                            .icon
+                              i(class="far fa-envelope")
+                            input(type="text" id="email" name="email" placeholder="e-mail")
+                          .column-row
+                            .icon
+                              i(class="fas fa-link")
+                            input(type="text" id="website" name="website" placeholder="website")
+                        .column
+                          textarea(id="subject" name="subject" placeholder="Message")
+                          input(class="button-send" type="submit" value="Send now!")
+                  
+            .column
+              .project-info
+                +title('Project Info')
+                .project-info__premium
+                  .icon
+                    i(class="fas fa-user")
+                  span premiumlayers
+                .project-info__likes
+                  .icon
+                    i(class="fas fa-heart")
+                  span 138 Likes
+                .project-info__date
+                  .icon
+                    i(class="far fa-calendar-alt")
+                  span 25 December, 2013
+                .project-info__coments
+                  .icon
+                    i(class="fas fa-link")
+                  span 4 Comments
+              .tags
+                +title('Tags')
+                .tags__link
+                  a(href="#")
+                    span web design
+                  a(href="#")
+                    span photography
+                  a(href="#")
+                    span development
+                  a(href="#")
+                    span php
+                  a(href="#")
+                    span ecommerce
+                  a(href="#")
+                    span graphic
+              .archive
+                +title('Archives')
+                ul
+                  li 
+                    a(href= '#') December 2013 (24)   
+                  li 
+                    a(href= '#') November 2013 (7)
+                  li 
+                    a(href= '#') September 2013 (2)
+                  li 
+                    a(href= '#') March 2013(22)
+                  li 
+                    a(href= '#') January 2013 (11)
+  include partials/footer

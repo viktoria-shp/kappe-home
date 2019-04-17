@@ -3,13 +3,16 @@ html(lang='uk')
   include partials/head
 body
   .main-page
+    .sidebar-opener
+      a(href="#")
+        i(class="fas fa-bars")
     .sidebar
       .my-scrollbar
         include partials/logo
         -
           var menu = [
             {text:'Home', href:'index.html', active: 1},
-            {text:'Work', href:'work.html'},
+            {text:'Work', href:'singlework.html'},
             {text:'About', href:'about.html'},
             {text:'Blog', href:'blog.html'},
             {text:'Services', href:'services.html'},
@@ -19,49 +22,34 @@ body
         include partials/filter
         include partials/share
     .content
-      .my-scrollbar
-        .portfolio-list
-          - for(var i=0; i<20; i++)
-            -
-              var items = [
-                'webdesign',
-                'illustration',
-                'photography',
-                'wallpapers',
-                'brochures'
-              ];
-              randIndex = Math.floor(Math.random() * items.length);
-            .portfolio-item__wrap(data-anchor=items[randIndex] data-test=randIndex)
-              a.portfolio-item(href="#")
-                .portfolio-item__inner
-                  picture
-                    img(src="img/1.jpg" alt="")
-                  .info
-                    .info-center
-                      .info__title
-                        span Cool App Design
-                      .info__subtitle
-                        span development, mobile, #{items[randIndex]}
-                      .info__arrow
-                        i(class="fas fa-arrow-right")
-      .contact
+      .m-l-300
         .my-scrollbar
-          .contact__icon
-            i(class="fas fa-info-circle")
-          .contact-info
-            .contact-info__tel
-              a(class="tel" href="tel: 9930 1234 5679") 
-                i(class="fas fa-phone")
-                |  9930 1234 5679
-            .contact-info__mail
-              a(href="")
-                i(class="fas fa-envelope")
-              a(href="mailto:contact@domain.com?Subject=Hello%20again" target="_top")
-                span e-mail:
-                |  contact@domain.com
-            .contact-info__adress
-              a(href="")
-                i(class="fas fa-home")
-                | span street address example
+          .portfolio-list
+            - for(var i=0; i<20; i++)
+              -
+                var items = [
+                  'webdesign',
+                  'illustration',
+                  'photography',
+                  'wallpapers',
+                  'brochures'
+                ];
+                randIndex = Math.floor(Math.random() * items.length);
+              .portfolio-item__wrap(data-anchor=items[randIndex] data-test=randIndex)
+                a.portfolio-item(href="#")
+                  .portfolio-item__inner
+                    picture
+                      img(src="img/1.jpg" alt="")
+                    .info
+                      .info-center
+                        .info__title
+                          span Cool App Design
+                        .info__subtitle
+                          span development, mobile, #{items[randIndex]}
+                        .info__arrow
+                          i(class="fas fa-arrow-right")
+        .contact
+          .my-scrollbar
+            include partials/contact-info       
     include partials/footer
 
